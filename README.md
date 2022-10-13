@@ -1,3 +1,4 @@
-# libreria-2.
+# teoria cuantica basica.
+
 segunda libreria cnyt
 ola
