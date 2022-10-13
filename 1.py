@@ -11,7 +11,7 @@ def diagonal(m):
     return mI
 
 
-def length(v1, v2):
+def long(v1, v2):
     if len(v1) == len(v2):
         return True
     else:
@@ -155,31 +155,38 @@ def dinamica(mat_u, v1, t):
 
 print(dinamica([[(0, 1), (0, 0)], [(0, 0), (0, 1)]], [(1, 0), (0, 0)], 1))
 
-"""
+
 # Ejercicio 4.3.1
-# Vector inicial :
-v1 = [[(1, 0)], [(0, 0)]]
-observable_x = [[(0, 0), (1, 0)], [(1, 0), (0, 0)]]
-vr = Spaces.m_action(observable_x, v1)
-valores_x, vectores_x = valores_vectores(observable_x)
-print("El resultado de la observacion es: ", vr)
-print("Los valores porpios del observable son: ", valores_x, "ademas sus vectores poropios son: ", vectores_x, " por tanto el sistema colapsa en un vector poropio")
-# Ejercicio 4.3.2
-# p1 = probabilidades_vectores(vr, observable_x, 1)
-# Excercise 4.4.1
-v1_4 = [[(0, 0), (1, 0)], [(1, 0), (0, 0)]]
-v2_4 = [[((2**(1/2))/2, 0), ((2**(1/2))/2, 0)], [((2**(1/2))/2, 0), (-(2**(1/2))/2, 0)]]
-if m_unitaria(v1_4) and m_unitaria(v2_4):
-    print(m_unitaria(Spaces.m_mul(v1_4,v2_4)))
-# Excercise 4.4.2
-print(dinamica([[(0, 0), (1/(2**(1/2)), 0), (1/(2**(1/2)), 0), (0, 0)],
-                    [(1/(2**(1/2)), 0), (0, 0), (0, 0), (-1/(2**(1/2)), 0)],
-                    [(1 / (2 ** (1 / 2)), 0), (0, 0), (0, 0), (1 / (2 ** (1 / 2)), 0)],
-                    [(0, 0), (-1/(2**(1/2)), 0), (1/(2**(1/2)), 0), (0, 0)]],
-                    [(1,0), (0,0), (0,0), (0,0)], 3))
-print(dinamica([[(0, 0), (1 / (2 ** (1 / 2)), 0), (1 / (2 ** (1 / 2)), 0), (0, 0)],
-               [(0, 1 / (2 ** (1 / 2))), (0, 0), (0, 0), (1 / (2 ** (1 / 2)), 0)],
-               [(1 / (2 ** (1 / 2)), 0), (0, 0), (0, 0), (0, 1 / (2 ** (1 / 2)))],
-               [(0, 0), (1 / (2 ** (1 / 2)), 0), (-1 / (2 ** (1 / 2)), 0), (0, 0)]],
-              [(1, 0), (0, 0), (0, 0), (0, 0)], 3))
 """
+Vector inicial :
+    v1 = [[(1, 0)], [(0, 0)]]
+    observable_x = [[(0, 0), (1, 0)], [(1, 0), (0, 0)]]
+    vr = Spaces.m_action(observable_x, v1)
+    valores_x, vectores_x = valores_vectores(observable_x)
+    print("El resultado de la observacion es: ", vr)
+    print("Los valores porpios del observable son: ", valores_x, "ademas sus vectores poropios son: ", vectores_x, " por tanto el sistema colapsa en un vector poropio")
+"""
+# Ejercicio 4.3.2
+"""
+    p1 = probabilidades_vectores(vr, observable_x, 1)
+    """
+# Excercise 4.4.1
+"""
+    v1_4 = [[(0, 0), (1, 0)], [(1, 0), (0, 0)]]
+    v2_4 = [[((2**(1/2))/2, 0), ((2**(1/2))/2, 0)], [((2**(1/2))/2, 0), (-(2**(1/2))/2, 0)]]
+    if m_unitaria(v1_4) and m_unitaria(v2_4):
+        print(m_unitaria(Spaces.m_mul(v1_4,v2_4)))
+        """
+# Excercise 4.4.2
+"""
+    print(dinamica([[(0, 0), (1/(2**(1/2)), 0), (1/(2**(1/2)), 0), (0, 0)],
+                        [(1/(2**(1/2)), 0), (0, 0), (0, 0), (-1/(2**(1/2)), 0)],
+                        [(1 / (2 ** (1 / 2)), 0), (0, 0), (0, 0), (1 / (2 ** (1 / 2)), 0)],
+                        [(0, 0), (-1/(2**(1/2)), 0), (1/(2**(1/2)), 0), (0, 0)]],
+                        [(1,0), (0,0), (0,0), (0,0)], 3))
+    print(dinamica([[(0, 0), (1 / (2 ** (1 / 2)), 0), (1 / (2 ** (1 / 2)), 0), (0, 0)],
+                   [(0, 1 / (2 ** (1 / 2))), (0, 0), (0, 0), (1 / (2 ** (1 / 2)), 0)],
+                   [(1 / (2 ** (1 / 2)), 0), (0, 0), (0, 0), (0, 1 / (2 ** (1 / 2)))],
+                   [(0, 0), (1 / (2 ** (1 / 2)), 0), (-1 / (2 ** (1 / 2)), 0), (0, 0)]],
+                  [(1, 0), (0, 0), (0, 0), (0, 0)], 3))
+    """
