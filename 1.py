@@ -20,26 +20,26 @@ def long(v1, v2):
 
 # Punto 1
 
-def probabilities(Ket1, pos):
-    norm = Spaces.v_norm(Ket1)
-    pos2 = Calculator.mod(Ket1[pos]) ** 2
+def prob(K1, pos):
+    norm = Spaces.v_norm(K1)
+    pos2 = Calculator.mod(K1[pos]) ** 2
     result = round((pos2/norm ** 2) * 100, 2)
     return result
 
 
-def amplitud(Ket1, Ket2):
+def amplitud(K1, K2):
     v1 = []
-    for index in range(len(Ket2)):
-        aux = [Ket2[index]]
+    for index in range(len(K2)):
+        aux = [K2[index]]
         v1 += [aux]
-    Ket2 = Spaces.m_conj(v1)
+    K2 = Spaces.m_conj(v1)
     v2 = []
-    for index in range(len(Ket2)):
-        v2 += Ket2[index]
-    norm_1 = Spaces.v_norm(Ket1)
+    for index in range(len(t2)):
+        v2 += K2[index]
+    norm_1 = Spaces.v_norm(K1)
     norm_2 = Spaces.v_norm(v2)
     norm = norm_1 * norm_2
-    prob = [Spaces.v_inner(v2, Ket1)]
+    prob = [Spaces.v_inner(v2, K1)]
     point = Spaces.v_scalar((1/norm, 0), prob)[0]
     point = (round(point[0], 2), round(point[1], 2))
     return point
@@ -61,27 +61,27 @@ def m_herm(m1):
         return False
 
 
-def media(observable, Ket):
-    Ket_aux = []
-    for index in range(len(Ket)):
-        aux = [Ket[index]]
-        Ket_aux += [aux]
+def media(observable, K):
+    K_aux = []
+    for index in range(len(K)):
+        aux = [K[index]]
+        K_aux += [aux]
     if m_herm(observable):
-        Bra = Spaces.m_conj(Ket_aux)
-        action = Spaces.m_action(observable, Ket_aux)
+        Bra = Spaces.m_conj(K_aux)
+        action = Spaces.m_action(observable, K_aux)
         point = Spaces.v_inner(action, Bra)
         point = (round(point[0], 2), round(point[1], 2))
         return point
     else:
         return "No es un observable valido"
 
-def varianza(observable, Ket):
-    Ket_aux = []
-    for index in range(len(Ket)):
-        aux = [Ket[index]]
+def varianza(observable, K):
+    K_aux = []
+    for index in range(len(K)):
+        aux = [K[index]]
         Ket_aux += [aux]
-    Bra = Spaces.m_conj(Ket_aux)
-    med = media(observable, Ket)
+    Bra = Spaces.m_conj(K_aux)
+    med = media(observable, K)
     id_med = [[(0, 0) for j in range(len(observable[0]))] for i in range(len(observable))]
     for i in range(len(observable)):
         for j in range(len(observable[i])):
