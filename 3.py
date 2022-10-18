@@ -1,5 +1,5 @@
 import math
-import ComplexCalculator
+import 2
 
 def f_aux(product):
     aux = 0
