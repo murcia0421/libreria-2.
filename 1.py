@@ -1,5 +1,6 @@
 import 2
 import 3
+import numpy as np
 
 
 def diagonal(m):
