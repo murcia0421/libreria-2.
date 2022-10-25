@@ -1,6 +1,6 @@
 import 2
 import 3
-import numpy as np
+
 
 def diagonal(m):
     mI = [[(0, 0) for j in range(m)] for i in range(m)]
